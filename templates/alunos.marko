@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Alunos</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+
+
+</head>
+    <body>
+         <div class="container">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+             <div class="card-panel">
+                <span class="blue-text text-darken-2">ALUNOS</span>
+             </div>
+             <a href="/form" class="btn-floating btn-large waves-effect waves-light light-blue"><i class="material-icons">add</i></a>
+
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                    <th>Opções</th>
+                </thead>
+                <for|aluno, index| of=data.results>
+                     <tr>
+                        <td>${aluno.id}</td>
+                        <td>${aluno.nome}</td>
+                        <td>${aluno.curso}</td>
+                        <td>
+                            <a style="margin-right: 10pt" href="/form/${aluno.id}" class="btn-floating btn-small waves-effect waves-light cyan accent-3"><i class="material-icons">edit</i></a>
+                            <a href="/alunos/delete/${aluno.id}" class="btn-floating btn-small waves-effect waves-light cyan accent-2"><i class="material-icons">delete</i></a>
+
+                        </td>
+                     </tr>
+                </for>
+            </table>
+       </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
+        <for|message, index| of=data.error_messages>
+            <script>
+                M.toast({
+                    html: '${message}',
+                    classes: 'red lighten-2'
+                })
+            </script>
+         </for> 
+   
+        <for|message, index| of=data.success_messages>
+            <script>
+                 M.toast({
+                    html: '${message}',
+                    classes: 'green lighten-4'
+                })
+            </script>
+      </for> 
+    </body>
+</html>

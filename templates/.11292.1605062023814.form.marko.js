@@ -1,0 +1,53 @@
+// Compiled using marko@4.23.9 - DO NOT EDIT
+"use strict";
+
+var marko_template = module.exports = require("marko/src/html").t(__filename),
+    marko_componentType = "/crud_node$1.0.0/templates/form.marko",
+    marko_renderer = require("marko/src/runtime/components/renderer"),
+    marko_attr = require("marko/src/runtime/html/helpers/attr"),
+    marko_loadTag = require("marko/src/runtime/helpers/load-tag"),
+    init_components_tag = marko_loadTag(require("marko/src/core-tags/components/init-components-tag")),
+    await_reorderer_tag = marko_loadTag(require("marko/src/core-tags/core/await/reorderer-renderer")),
+    _preferred_script_location_tag = marko_loadTag(require("marko/src/core-tags/components/preferred-script-location-tag"));
+
+function render(input, out, __component, component, state) {
+  var data = input;
+
+  out.w("<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content=\"width=device-width, initial-scale=1.0\"><title>Cadastro</title><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css integrity=sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2 crossorigin=anonymous><script src=https://code.jquery.com/jquery-3.5.1.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js integrity=sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx crossorigin=anonymous></script><script>\r\n       $().toast('Erro!')\r\n   </script></head><body><div class=container><h1>Cadastro</h1><br><form action=/alunos method=post><div class=form-group><input cclass=\"alert alert-secondary\" type=hidden name=id" +
+    marko_attr("value", data.id) +
+    "></div><div class=form-group><input class=\"alert alert-secondary\" type=text name=nome placeholder=nome" +
+    marko_attr("value", data.nome) +
+    "></div><div class=form-group><input class=\"alert alert-secondary\" type=email name=email placeholder=email" +
+    marko_attr("value", data.email) +
+    "></div><div class=form-group><select class=\"alert alert-secondary\" name=curso value><option value" +
+    marko_attr("selected", data.curso == "") +
+    " disabled></option><option value=ads" +
+    marko_attr("selected", data.curso == "ads") +
+    ">Técnologo em ADS</option><option value=ipi" +
+    marko_attr("selected", data.curso == "ipi") +
+    ">Téc. em Informática para Internet</option><option value=qualidade" +
+    marko_attr("selected", data.curso == "qualidade") +
+    ">Téc. em Gestão da Qualidade</option></select></div><button class=\"btn btn-outline-danger\" type=reset>Cancelar</button><button class=\"btn btn-outline-success\" type=submit>Salvar</button></form></div>");
+
+  init_components_tag({}, out);
+
+  await_reorderer_tag({}, out, __component, "25");
+
+  _preferred_script_location_tag({}, out);
+
+  out.w("</body></html>");
+}
+
+marko_template._ = marko_renderer(render, {
+    ___implicit: true,
+    ___type: marko_componentType
+  });
+
+marko_template.meta = {
+    id: "/crud_node$1.0.0/templates/form.marko",
+    tags: [
+      "marko/src/core-tags/components/init-components-tag",
+      "marko/src/core-tags/core/await/reorderer-renderer",
+      "marko/src/core-tags/components/preferred-script-location-tag"
+    ]
+  };
